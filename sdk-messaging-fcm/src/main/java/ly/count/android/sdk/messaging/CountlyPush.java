@@ -625,7 +625,9 @@ public class CountlyPush {
 
                 @Override
                 public void onActivityStopped(Activity activity) {
-                    CountlyPush.activity = null;
+                    if (CountlyPush.activity.equals(activity)) {
+                        CountlyPush.activity = null;
+                    }
                 }
 
                 @Override
